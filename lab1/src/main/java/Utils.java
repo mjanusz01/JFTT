@@ -73,4 +73,21 @@ public class Utils {
             return false;
         }
     }
+
+    public boolean comparePatternWithBoundary(int q, int m, int i, char[] pattern, char[] text){
+        boolean compareValue = true;
+        if(q<m){
+            compareValue = pattern[q]!=text[i];
+        }
+        return q>0 && compareValue;
+    }
+
+    public boolean comparePatternWithBoundary2(int q, int m, int i, char[] pattern, char[] text){
+        if(q<m){
+            return pattern[q]==text[i];
+        }
+        else{
+            return false;
+        }
+    }
 }

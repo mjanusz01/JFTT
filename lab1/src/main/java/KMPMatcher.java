@@ -17,4 +17,23 @@ public class KMPMatcher {
         }
         return functionValues;
     }
+
+    public void KMP(char[] pattern, char[] text){
+        Utils utils = new Utils();
+        int m = pattern.length;
+        int[] computedFunctionValues = computePrefixFunction(pattern);
+        int q = 0;
+        for(int i = 0; i<text.length; i++){
+            while(utils.comparePatternWithBoundary(q,m,i,pattern,text)){
+                q = computedFunctionValues[q];
+            }
+            if(utils.comparePatternWithBoundary2(q,m,i,pattern,text)){
+                q++;
+            }
+            if(q == m){
+                System.out.println("Wzorzec wystąpił w miejscu " + i);
+            }
+        }
+
+    }
 }

@@ -19,10 +19,10 @@ public class FiniteAutomationMatcherTest {
 
     @Test
     public void FATest() throws IOException {
-        String text = "kawababaccakkakababakababacakababakababalababacacacaca";
+        String text = "kawababacaakkakababakababacakababakababalababacacacaca";
         char[] pattern = {'a','b','a','b','a','c','a'};
         char[] textCharArray = text.toCharArray();
         int[][] result = finiteAutomationMatcher.computeTransitionFunction(pattern);
-        finiteAutomationMatcher.FA(textCharArray,result,pattern,true);
+        finiteAutomationMatcher.FA(textCharArray,result,pattern,false);
     }
 }
