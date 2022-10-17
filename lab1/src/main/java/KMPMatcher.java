@@ -27,7 +27,7 @@ public class KMPMatcher {
             while(utils.comparePatternWithBoundary(q,m,i,pattern,text)){
                 q = computedFunctionValues[q];
             }
-            if(utils.comparePatternWithBoundary2(q,m,i,pattern,text)){
+            if(pattern[q]==text[i]){
                 q++;
             }
             if(q == m){
