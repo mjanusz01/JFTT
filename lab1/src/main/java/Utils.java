@@ -54,12 +54,23 @@ public class Utils {
         }
     }
 
+
+
     public void printFunction(int[][] function){
         for(int i = 0; i<function.length; i++){
             for(int j = 0; j<function[0].length; j++){
                 System.out.print(function[i][j] + " ");
             }
             System.out.println(" ");
+        }
+    }
+
+    public boolean compareWithBoundary(char[] pattern, int k, int q){
+        if(k<=pattern.length){
+            return pattern[k]==pattern[q-1];
+        }
+        else {
+            return false;
         }
     }
 }
