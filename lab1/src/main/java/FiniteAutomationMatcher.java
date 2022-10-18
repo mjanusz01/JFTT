@@ -24,7 +24,7 @@ public class FiniteAutomationMatcher {
         return transitionFunctionValues;
     }
 
-    public ArrayList<Integer> FA(char[] text, char[] pattern, boolean log){
+    public ArrayList<Integer> FA(char[] text, char[] pattern){
         ArrayList<Integer> results = new ArrayList<>();
         int[][] function = computeTransitionFunction(pattern);
         int m = pattern.length;
@@ -32,12 +32,8 @@ public class FiniteAutomationMatcher {
         int q = 0;
         for(int i = 0; i<n; i++){
             q = function[q][text[i]];
-            if(log) {
-                System.out.println("Stan automatu po wczytaniu " + i + "-tego symbolu :" + q);
-            }
             if(q == m){
                 results.add(i - pattern.length + 1);
-                System.out.println("Wzorzec wystąpił w miejscu " + (i - pattern.length + 1));
             }
         }
         return results;

@@ -14,11 +14,11 @@ public class Main {
         switch (args[0]) {
             case "FA" -> {
                 FiniteAutomationMatcher finiteAutomationMatcher = new FiniteAutomationMatcher();
-                finiteAutomationMatcher.FA(text, pattern, false);
+                System.out.println("Wzorzec " + args[1] + " występuje na pozycjach " + finiteAutomationMatcher.FA(text, pattern) + " (obliczono algorytmem FA)");
             }
             case "KMP" -> {
                 KMPMatcher kmpMatcher = new KMPMatcher();
-                kmpMatcher.KMP(pattern, text);
+                System.out.println("Wzorzec " + args[1] + " występuje na pozycjach " + kmpMatcher.KMP(pattern, text) + " (obliczono algorytmem KMP)");
             }
             default -> throw new UnsupportedMatcherTypeException("Matcher type " + args[0] + " doesn't exist!");
         }

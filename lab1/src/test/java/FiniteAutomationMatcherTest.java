@@ -24,14 +24,14 @@ public class FiniteAutomationMatcherTest {
         String text = "kawababacaakkakababakababacakababakababalababacacacaca";
         char[] pattern = {'a','b','a','b','a','c','a'};
         char[] textCharArray = text.toCharArray();
-        finiteAutomationMatcher.FA(textCharArray, pattern,false);
+        finiteAutomationMatcher.FA(textCharArray, pattern);
     }
 
     public void getResultsForPatternAndText(String inputPattern, String inputText, String expectedValues){
         FiniteAutomationMatcher finiteAutomationMatcher = new FiniteAutomationMatcher();
         char[] text = inputText.toCharArray();
         char[] pattern = inputPattern.toCharArray();
-        ArrayList<Integer> returnedValuesForPattern1 = finiteAutomationMatcher.FA(text,pattern,false);
+        ArrayList<Integer> returnedValuesForPattern1 = finiteAutomationMatcher.FA(text,pattern);
         assertEquals(expectedValues,returnedValuesForPattern1.toString());
     }
 

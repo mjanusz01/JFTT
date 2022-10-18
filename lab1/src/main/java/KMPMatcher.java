@@ -35,10 +35,8 @@ public class KMPMatcher {
             }
             if(q == m){
                 results.add(i - pattern.length + 1);
-                System.out.println("Wzorzec wystąpił w miejscu " + (i - pattern.length + 1));
             }
         }
         return results;
-
     }
 }
