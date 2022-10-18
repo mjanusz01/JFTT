@@ -16,15 +16,7 @@ public class FiniteAutomationMatcherTest {
     public void computeTransitionFunctionCormenReturnsGoodArrayTest() throws IOException {
         char[] pattern = {'a','b','a','b','a','c','a'};
         int[][] result = finiteAutomationMatcher.computeTransitionFunction(pattern);
-        utils.printFunction(result);
-    }
-
-    @Test
-    public void FATest() throws IOException {
-        String text = "kawababacaakkakababakababacakababakababalababacacacaca";
-        char[] pattern = {'a','b','a','b','a','c','a'};
-        char[] textCharArray = text.toCharArray();
-        finiteAutomationMatcher.FA(textCharArray, pattern);
+        //utils.printFunction(result);
     }
 
     public void getResultsForPatternAndText(String inputPattern, String inputText, String expectedValues){

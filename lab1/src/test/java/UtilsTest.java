@@ -8,8 +8,7 @@ public class UtilsTest {
 
     @Test
     public void ASCIIValueReturnsCorrectValuesTest(){
-        System.out.println((int)('u'));
-        assertTrue(true);
+        assertEquals((int)('u'),117);
     }
 
     //testy zwykłej metody isSuffix
@@ -62,9 +61,6 @@ public class UtilsTest {
         assertFalse(utils.isSuffixWithParameters(adabkc,kpadup,3,5,97));
         assertFalse(utils.isSuffixWithParameters(adabkc,kpadup,3,6,97));
     }
-
-
-    //zgodność charów na pozycjach po konkatenacji
 
     @Test
     public void textsEqualWithExceptionsTest(){

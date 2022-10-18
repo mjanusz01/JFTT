@@ -28,16 +28,6 @@ public class KMPMatcherTest {
         Assertions.assertArrayEquals(expectedValuesForPattern4, computedFunctionValuesForPattern4);
     }
 
-    @Test
-    public void KMPTest(){
-        KMPMatcher kmpMatcher = new KMPMatcher();
-        String text = "kawababacaakkakababakababacakababakababalababacacacaca";
-        char[] pattern = {'a','b','a','b','a','c','a'};
-        char[] textCharArray = text.toCharArray();
-        ArrayList<Integer> patternPositions = kmpMatcher.KMP(pattern,textCharArray);
-        System.out.println(patternPositions.toString());
-    }
-
     public void getResultsForPatternAndText(String inputPattern, String inputText, String expectedValues){
         KMPMatcher kmpMatcher = new KMPMatcher();
         char[] text = inputText.toCharArray();

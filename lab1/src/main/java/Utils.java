@@ -54,8 +54,6 @@ public class Utils {
         }
     }
 
-
-
     public void printFunction(int[][] function){
         for(int i = 0; i<function.length; i++){
             for(int j = 0; j<function[0].length; j++){
