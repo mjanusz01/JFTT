@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class KMPMatcher {
 
     public int[] computePrefixFunction(char[] pattern){
@@ -18,8 +20,9 @@ public class KMPMatcher {
         return functionValues;
     }
 
-    public void KMP(char[] pattern, char[] text){
+    public ArrayList<Integer> KMP(char[] pattern, char[] text){
         Utils utils = new Utils();
+        ArrayList<Integer> results = new ArrayList<>();
         int m = pattern.length;
         int[] computedFunctionValues = computePrefixFunction(pattern);
         int q = 0;
@@ -31,9 +34,11 @@ public class KMPMatcher {
                 q++;
             }
             if(q == m){
-                System.out.println("Wzorzec wystąpił w miejscu " + i);
+                results.add(i - pattern.length + 1);
+                System.out.println("Wzorzec wystąpił w miejscu " + (i - pattern.length + 1));
             }
         }
+        return results;
 
     }
 }

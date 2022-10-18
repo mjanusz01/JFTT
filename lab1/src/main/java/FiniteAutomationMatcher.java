@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,8 @@ public class FiniteAutomationMatcher {
         return transitionFunctionValues;
     }
 
-    public void FA(char[] text, char[] pattern, boolean log){
+    public ArrayList<Integer> FA(char[] text, char[] pattern, boolean log){
+        ArrayList<Integer> results = new ArrayList<>();
         int[][] function = computeTransitionFunction(pattern);
         int m = pattern.length;
         int n = text.length;
@@ -34,9 +36,11 @@ public class FiniteAutomationMatcher {
                 System.out.println("Stan automatu po wczytaniu " + i + "-tego symbolu :" + q);
             }
             if(q == m){
-                System.out.println("Wzorzec wystąpił w miejscu " + i);
+                results.add(i - pattern.length + 1);
+                System.out.println("Wzorzec wystąpił w miejscu " + (i - pattern.length + 1));
             }
         }
+        return results;
     }
 
 
