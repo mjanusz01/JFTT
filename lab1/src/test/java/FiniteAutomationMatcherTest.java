@@ -22,7 +22,6 @@ public class FiniteAutomationMatcherTest {
         String text = "kawababacaakkakababakababacakababakababalababacacacaca";
         char[] pattern = {'a','b','a','b','a','c','a'};
         char[] textCharArray = text.toCharArray();
-        int[][] result = finiteAutomationMatcher.computeTransitionFunction(pattern);
-        finiteAutomationMatcher.FA(textCharArray,result,pattern,false);
+        finiteAutomationMatcher.FA(textCharArray, pattern,false);
     }
 }

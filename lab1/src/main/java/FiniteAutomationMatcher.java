@@ -23,7 +23,8 @@ public class FiniteAutomationMatcher {
         return transitionFunctionValues;
     }
 
-    public void FA(char[] text, int[][] function, char[] pattern, boolean log){
+    public void FA(char[] text, char[] pattern, boolean log){
+        int[][] function = computeTransitionFunction(pattern);
         int m = pattern.length;
         int n = text.length;
         int q = 0;
